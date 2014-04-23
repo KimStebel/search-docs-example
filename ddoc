@@ -1,0 +1,12 @@
+{
+  "indexes": {
+    "index": {
+      "analyzer": {
+        "name": "perfield",
+        "default": "english",
+        "fields": { "author":"whitespace", "title_English": "english", "title_German": "german", "title_Chinese": "chinese", "title_Italian": "italian", "title_Russian": "russian", "title_Swedish": "swedish", "title_Norwegian": "norwegian", "title_Portuguese": "portuguese", "title_Spanish": "spanish", "title_Dutch": "dutch", "title_French": "french", "title_Japanese": "japanese", "title_Czech": "czech"}
+      },
+      "index": "function(doc) { index('year', doc.year, {'facet': true}); index('sold', doc.sold, {'facet': true})); index('author', doc.author); index('language', doc.language, {'facet': true})); index('title_' + doc.language, doc['title_' + doc.language]); }"
+    }
+  }
+}
