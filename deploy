@@ -1,7 +1,6 @@
 #!/bin/bash
 
 source creds
-base="https://$user:$pass@$user.cloudant.com/books"
 curl -X DELETE "${base}"
 curl -X PUT "${base}"
 curl -X PUT "${base}/_design/ddoc" -H 'Content-Type: application/json' -d "$(cat ddoc)"

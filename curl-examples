@@ -1,13 +1,6 @@
-gb111570@oc5067316841:~/booksdb$ curl "${base}/_design/ddoc/_search/index?q=author:john"
-{"total_rows":0,"bookmark":"g2o","rows":[]}
-gb111570@oc5067316841:~/booksdb$ curl "${base}/_design/ddoc/_search/index?q=author:John"
-{"total_rows":1,"bookmark":"g2wAAAABaANkABxkYmNvcmVAZGIyLm1lYWQuY2xvdWRhbnQubmV0bAAAAAJhAGI_____amgCRkAC3OnAAAAAYR1q","rows":[{"id":"91","order":[2.35786771774292,29],"fields":{}}]}
-gb111570@oc5067316841:~/booksdb$ curl "${base}/91"
-{"_id":"91","_rev":"1-049a3be7b8634bbdd7d6847f088a5fd8","title_English":"The Grapes of Wrath","author":"John Steinbeck","language":"English","year":1939,"sold":15.0}
-gb111570@oc5067316841:~/booksdb$ curl "${base}/_design/ddoc/_search/index?q=title_English:Grapes"
-{"total_rows":1,"bookmark":"g2wAAAABaANkABxkYmNvcmVAZGIxLm1lYWQuY2xvdWRhbnQubmV0bAAAAAJhAGI_____amgCRkAC3OnAAAAAYR1q","rows":[{"id":"91","order":[2.35786771774292,29],"fields":{}}]}
-gb111570@oc5067316841:~/booksdb$ curl "${base}/_design/ddoc/_search/index?q=title_English:grapes"
-{"total_rows":1,"bookmark":"g2wAAAABaANkABxkYmNvcmVAZGIyLm1lYWQuY2xvdWRhbnQubmV0bAAAAAJhAGI_____amgCRkAC3OnAAAAAYR1q","rows":[{"id":"91","order":[2.35786771774292,29],"fields":{}}]}
-gb111570@oc5067316841:~/booksdb$ curl "${base}/_design/ddoc/_search/index?q=title_English:grape"
-{"total_rows":1,"bookmark":"g2wAAAABaANkABxkYmNvcmVAZGIxLm1lYWQuY2xvdWRhbnQubmV0bAAAAAJhAGI_____amgCRkAC3OnAAAAAYR1q","rows":[{"id":"91","order":[2.35786771774292,29],"fields":{}}]}
+curl "${base}/_design/ddoc/_search/books?q=author:John"
+curl "${base}/91"
+curl "${base}/_design/ddoc/_search/books?q=title_English:Grapes"
+curl "${base}/_design/ddoc/_search/books?q=title_English:grapes"
+curl "${base}/_design/ddoc/_search/books?q=title_English:grape"
 
