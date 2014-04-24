@@ -1,6 +1,6 @@
-curl "${base}/_design/ddoc/_search/books?q=author:John"
-curl "${base}/91"
-curl "${base}/_design/ddoc/_search/books?q=title_English:Grapes"
-curl "${base}/_design/ddoc/_search/books?q=title_English:grapes"
-curl "${base}/_design/ddoc/_search/books?q=title_English:grape"
+curl "${base}/_design/ddoc/_search/books?q=author:John" | jq '.'
+curl "${base}/91" | jq '.'
+curl "${base}/_design/ddoc/_search/books?q=title_English:Grapes" | jq '.'
+curl "${base}/_design/ddoc/_search/books?q=title_English:grapes" | jq '.'
+curl "${base}/_design/ddoc/_search/books?q=title_English:grape" | jq '.'
 
