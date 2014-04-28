@@ -1,11 +1,10 @@
 #!/bin/bash
 
 source creds
-curl -X DELETE "${base}"
 curl -X PUT "${base}"
 curl -X PUT "${base}/_design/ddoc" -H 'Content-Type: application/json' -d "$(cat ddoc)"
 cd books
 for i in *; do
-  curl -X PUT "${base}/${i}" -H 'Content-Type: application/json' -d "$(cat $i)"
+  curl -X PUT "${base}/book${i}" -H 'Content-Type: application/json' -d "$(cat $i)"
 done
 cd ..

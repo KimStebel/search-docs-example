@@ -5,7 +5,6 @@
                   "name": "perfield",
                   "default": "english",
                   "fields": {
-                      "author": "whitespace",
                       "title_German": "german",
                       "title_Chinese": "chinese",
                       "title_Italian": "italian",
@@ -20,7 +19,7 @@
                       "title_Czech": "czech"
                   }
               },
-              "index": "function(doc) { index('year', doc.year, {'facet': true}); index('sold', doc.sold, {'facet': true}); index('author', doc.author, {'store': true}); index('language', doc.language, {'facet': true}); index('title_' + doc.language, doc['title_' + doc.language], {'store': true}); }"
+              "index": "function(doc) { if (doc.type && doc.type == 'book') { index('year', doc.year, {'facet': true}); index('sold', doc.sold, {'facet': true}); index('author', doc.author, {'store': true}); index('language', doc.language, {'facet': true}); index('title_' + doc.language, doc['title_' + doc.language], {'store': true}); } }"
           }
       }
   }

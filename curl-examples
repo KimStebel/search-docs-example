@@ -4,3 +4,4 @@ curl "${base}/_design/ddoc/_search/books?q=title_English:Grapes" | jq '.'
 curl "${base}/_design/ddoc/_search/books?q=title_English:grapes" | jq '.'
 curl "${base}/_design/ddoc/_search/books?q=title_English:grape" | jq '.'
 
+
