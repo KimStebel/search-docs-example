@@ -1,6 +1,10 @@
 #!/bin/bash
 
 source creds
+
+if [ -n "$1" ]; do
+    base="$1"
+done
 curl -X PUT "${base}"
 curl -X PUT "${base}/_design/ddoc" -H 'Content-Type: application/json' -d "$(cat ddoc)"
 cd books
